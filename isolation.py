@@ -7,7 +7,7 @@ st.set_page_config(page_title="Project Anomaly Checker", page_icon="🚩", layou
 st.title("🚩 Project Anomaly Checker")
 st.write(
     "Enter a project's details below to check whether it looks anomalous "
-    "based on your trained Isolation Forest model."
+    "based on the trained Isolation Forest model."
 )
 
 @st.cache_resource
