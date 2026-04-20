@@ -1,3 +1,4 @@
+from datasets import load_dataset
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -43,7 +44,17 @@ st.markdown("""
 # ----------------------------
 @st.cache_data
 def load_data():
-    return pd.read_csv("dataset/final_results_exploded.csv")
+    data_files = {
+        "main": "hf://datasets/ell-ws/dpwh-tracking/final_results_exploded.csv",
+    }
+
+    dataset = load_dataset(
+        "csv",
+        data_files=data_files,
+        token=st.secrets["HF_TOKEN"]
+    )
+
+    return dataset["main"].to_pandas()
 
 df = load_data()
 
