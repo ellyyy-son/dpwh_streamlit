@@ -4,6 +4,8 @@ import joblib
 
 st.set_page_config(page_title="Project Anomaly Checker", page_icon="🚩", layout="centered")
 
+st.sidebar.write("Developed by Elly Olegario")
+
 st.title("🚩 Project Anomaly Checker")
 st.write(
     "Enter a project's details below to check whether it looks anomalous "
