@@ -136,15 +136,3 @@ if submitted:
     except Exception as e:
         st.error("Prediction failed. Check that your saved preprocessor expects the same input columns used in this form.")
         st.exception(e)
-
-st.markdown("---")
-st.caption(
-    "Expected file: `isolation_forest_bundle.pkl` containing a dictionary with keys `model` and `preprocessor`."
-)
-
-st.code(
-    """# Example: create the bundle in Colab\n"
-    "joblib.dump({\"model\": iso_model, \"preprocessor\": iso_preprocessor}, \"isolation_forest_bundle.pkl\")\n"
-    "# Then put that file beside this Streamlit app""",
-    language="python",
-)
